@@ -7,7 +7,7 @@ import streamlit as st
 st.set_page_config(page_title="Chef AI 🍳", layout="wide")
 st.title("🍳 Chef AI - Find What to Cook!")
 
-# Load and prepare dataset
+
 data = pd.read_csv("food_recipes.csv")
 data = data[['recipe_title','ingredients','instructions','url']]  # include url
 data = data.dropna()
@@ -22,7 +22,7 @@ X_vector = vectorizer.fit_transform(X)
 model = MultinomialNB()
 model.fit(X_vector, y)
 
-# Input ingredients
+
 ingredients_input = st.text_input("Enter ingredients you have (comma separated):")
 
 if ingredients_input:
@@ -36,7 +36,7 @@ if ingredients_input:
     for idx, recipe_name in enumerate(top_recipes, 1):
         st.write(f"{idx}. {recipe_name}")
 
-    # Dropdown to select recipe
+
     selected_recipe = st.selectbox("Select recipe to see steps:", top_recipes)
     if selected_recipe:
         recipe_row = data[data["recipe_title"] == selected_recipe]
@@ -49,8 +49,9 @@ if ingredients_input:
             if step != "":
                 st.write(f"**Step {i}:** {step}")
 
-        # Display clickable link if available
+      
         recipe_url = recipe_row["url"].values[0]
         if recipe_url:
             st.markdown(f"[🔗 View full recipe online]({recipe_url})")
-    #python -m streamlit run app.py
+
+   
