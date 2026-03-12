@@ -28,15 +28,6 @@ WORKING:
 3.The recipe is displayed in the Streamlit interface.
 
 
-
- LEARNING OUTCOMES:
-Machine Learning basics
-NLP using TF-IDF
-Model training with Scikit-learn
-Building web apps using Streamlit
-End-to-end ML project development
-
-
  AUTHOR:
 Akash Nair
-Second-year student interested in AI, Machine Learning, and Software Development.
+
